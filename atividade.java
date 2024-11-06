@@ -21,6 +21,9 @@ public class atividade {
                 case 4:
                 ativiade4();
                 break;
+                case 5:
+                ativiade5();
+                break;
                
             default:
                 System.out.println("atividade nao encontrada");
@@ -92,7 +95,15 @@ System.out.println("resultado = " + num1);
         double num1 = scanner.nextDouble();
         System.out.println("digite o segundo numero");
         double num2 = scanner.nextDouble();
-        
+        double resultado= num1*6;
+        resultado-=Math.pow(num2,3);
+        resultado=Math.sqrt(resultado);
+        num1= Math.pow(num1,4);
+    num1-=resultado;
+        System.out.println("resultado = " + num1);
+    }
+
+     
 
 }
 
