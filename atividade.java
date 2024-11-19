@@ -24,6 +24,21 @@ public class atividade {
                 case 5:
                 ativiade5();
                 break;
+                case 6:
+                ativade6();
+                break;
+                case 7:
+                ativade7();
+                break;
+                case 8:
+                ativade8();
+                break;
+                case 9:
+                ativade9();
+                break;
+                case 10:
+                ativade10();
+                break;
                
             default:
                 System.out.println("atividade nao encontrada");
@@ -102,9 +117,56 @@ System.out.println("resultado = " + num1);
     num1-=resultado;
         System.out.println("resultado = " + num1);
     }
+    public static void ativade6() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite o valor de e: ");
+        double e = scanner.nextDouble();
+        System.out.print("Digite o valor de y: ");
+        double y = scanner.nextDouble();
+        System.out.print("Digite o valor de x: ");
+        double x = scanner.nextDouble();
+        double resultado = (e * e) / (1 * ((y - 1) / (x - 2 * y)));
+        System.out.println("Resultado: " + resultado);
+        scanner.close();
+      
+    }
+    public static void ativade7() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite o valor de c: ");
+        double c = scanner.nextDouble();
+        System.out.print("Digite o valor de s: ");
+        double s = scanner.nextDouble();
+        System.out.print("Digite o valor de x: ");
+        double x = scanner.nextDouble();
 
-     
+        double resultado = 7 * (Math.pow(c, 6) * (Math.sqrt(5 - s * s * Math.sqrt(3 * x - 4))));
+        System.out.println("Resultado: " + resultado);
+        
+        scanner.close();
+      
+    }
+    public static void ativade8() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite o número de pessoas inscritas para a viagem: ");
+        int totalPessoas = scanner.nextInt();
 
+        int capacidadeOnibus = 45;
+        int onibusNecessarios = totalPessoas / capacidadeOnibus;
+        int pessoasEmVans = totalPessoas % capacidadeOnibus;
+
+        System.out.println("Número de ônibus necessários: " + onibusNecessarios);
+        System.out.println("Número de pessoas que deverão ser transportadas em vans: " + pessoasEmVans);
+
+        scanner.close();
+      
+    }
+    public static void ativade9() {
+
+      
+    }
+    public static void ativade10() {
+      
+    }
 }
 
     
