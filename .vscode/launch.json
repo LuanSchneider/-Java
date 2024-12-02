@@ -9,6 +9,13 @@
       "name": "atividade",
       "request": "launch",
       "mainClass": "atividade",
+      "projectName": "-Java_1c3ae64e"
+    },
+    {
+      "type": "java",
+      "name": "atividade",
+      "request": "launch",
+      "mainClass": "atividade",
       "projectName": "-Java_1d11eceb"
     },
     {

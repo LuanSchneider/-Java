@@ -39,6 +39,23 @@ public class atividade {
                 case 10:
                 ativade10();
                 break;
+                case 11:
+                ativade11();
+                break;  
+                case 12:
+                ativade12();
+                break;  
+                case 13:    
+                ativade13();
+                break;
+                case 14:
+                ativade14();
+                break;
+                case 15:
+                ativade15();
+                break;
+                case 16:
+            
                
             default:
                 System.out.println("atividade nao encontrada");
@@ -161,13 +178,194 @@ System.out.println("resultado = " + num1);
       
     }
     public static void ativade9() {
-
+        int x = 5;
+        boolean resultado = (x <= 7) ? true : false;
+        System.out.println("O resultado é: " + resultado);
+        
       
     }
     public static void ativade10() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Informe o primeiro número: ");
+        double numero1 = scanner.nextDouble();
+        System.out.print("Informe o segundo número: ");
+        double numero2 = scanner.nextDouble();
+        System.out.print("Informe o operador (*, +, -, /, %): ");
+        char operador = scanner.next().charAt(0);
+
+        if (operador == '+') {
+            System.out.println("Resultado: " + (numero1 + numero2));
+        } else if (operador == '-') {
+            System.out.println("Resultado: " + (numero1 - numero2));
+        } else if (operador == '*') {
+            System.out.println("Resultado: " + (numero1 * numero2));
+        } else if (operador == '/') {
+            if (numero2 != 0) {
+                System.out.println("Resultado: " + (numero1 / numero2));
+            } else {
+                System.out.println("Divisão por zero não é permitida.");
+            }
+        } else if (operador == '%') {
+            if (numero2 != 0) {
+                System.out.println("Resultado: " + (numero1 % numero2));
+            } else {
+                System.out.println("Divisão por zero não é permitida.");
+            }
+        } else {
+            System.out.println("Operador inválido.");
+        }
       
     }
-}
+    public static void ativade11() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Informe seu peso na Terra (em kg): ");
+        double pesoTerra = scanner.nextDouble();
+
+        System.out.println("Escolha um planeta:");
+        System.out.println("1. Mercúrio");
+        System.out.println("2. Vênus");
+        System.out.println("3. Marte");
+        System.out.println("4. Júpiter");
+        System.out.println("5. Saturno");
+        System.out.println("6. Urano");
+        System.out.println("7. Netuno");
+        System.out.print("Digite o número correspondente ao planeta: ");
+        int escolha = scanner.nextInt();
+
+        double fator = 0;
+        String planeta = "";
+
+        switch (escolha) {
+            case 1:
+                fator = 0.38;
+                planeta = "Mercúrio";
+                break;
+            case 2:
+                fator = 0.91;
+                planeta = "Vênus";
+                break;
+            case 3:
+                fator = 0.38;
+                planeta = "Marte";
+                break;
+            case 4:
+                fator = 2.36;
+                planeta = "Júpiter";
+                break;
+            case 5:
+                fator = 0.92;
+                planeta = "Saturno";
+                break;
+            case 6:
+                fator = 0.89;
+                planeta = "Urano";
+                break;
+            case 7:
+                fator = 1.13;
+                planeta = "Netuno";
+                break;
+            default:
+                System.out.println("Escolha inválida.");
+                System.exit(0);
+        }
+
+        double pesoPlaneta = pesoTerra * fator;
+        System.out.println("Seu peso em " + planeta + " é " + pesoPlaneta + " kg.");
+        scanner.close();
+      
+    }
+    public static void ativade12() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Você foi orador da turma? (true/false): ");
+        boolean oradorTurma = scanner.nextBoolean();
+
+        System.out.print("Quantos alunos havia na sua escola? ");
+        int tamanhoEscola = scanner.nextInt();
+
+        System.out.print("Qual sua média geral? ");
+        double mediaGeral = scanner.nextDouble();
+
+        System.out.print("Qual sua pontuação no SAT? ");
+        int pontuacaoSAT = scanner.nextInt();
+
+        boolean admitido = (oradorTurma && tamanhoEscola >= 1400) ||
+                           (mediaGeral >= 4.0 && pontuacaoSAT >= 1100) ||
+                           (mediaGeral >= 3.5 && pontuacaoSAT >= 1300) ||
+                           (mediaGeral >= 3.0 && pontuacaoSAT >= 1500);
+
+        if (admitido) {
+            System.out.println("Parabéns! Você foi aceito na Mountville University.");
+        } else {
+            System.out.println("Infelizmente, você não atende aos critérios de admissão.");
+        }
+
+        scanner.close();
+      
+    }
+    public static void ativade13() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Informe a altura da sala (em metros): ");
+        double altura = scanner.nextDouble();
+        System.out.print("Informe o comprimento da sala (em metros): ");
+        double comprimento = scanner.nextDouble();
+        System.out.print("Informe a largura da sala (em metros): ");
+        double largura = scanner.nextDouble();
+
+        double areaParedes = 2 * (altura * comprimento + altura * largura);
+        double areaTeto = comprimento * largura;
+        double areaTotal = areaParedes + areaTeto;
+
+        int latas5Litros = (int) (areaTotal / 140);
+        double sobraArea = areaTotal % 140;
+
+        int latas1Litro = (int) Math.ceil(sobraArea / 28);
+
+        double custoTotal = (latas5Litros * 15) + (latas1Litro * 4);
+
+        System.out.println("Área total a ser pintada: " + areaTotal + " m²");
+        System.out.println("Latas de 5 litros necessárias: " + latas5Litros);
+        System.out.println("Latas de 1 litro necessárias: " + latas1Litro);
+        System.out.println("Custo total: $" + custoTotal);
+    }
+    public static void ativade14() {
+        Scanner scanner = new Scanner(System.in);
+        StringBuilder mensagemDecodificada = new StringBuilder();
+        int[] mapaNumeros = {0, 'D', 'W', 'E', 'L', 'H', 'O', 'R'};
+
+        System.out.println("Insira 10 números para decodificar a mensagem (1 a 7):");
+
+        int contador = 0;
+        while (contador < 10) {
+            System.out.print("Número " + (contador + 1) + ": ");
+            int numero = scanner.nextInt();
+
+            if (numero >= 1 && numero <= 7) {
+                mensagemDecodificada.append((char) mapaNumeros[numero]);
+                contador++;
+            } else {
+                System.out.println("Número inválido. Insira um número entre 1 e 7.");
+            }
+        }
+
+        System.out.println("Mensagem decodificada: " + mensagemDecodificada.toString());
+    }
+    public static void ativade15() {
+ 
+                String texto = "Pesquise até aqui.";
+                for (int i = 0; i < texto.length(); i++) {
+                    if (texto.charAt(i) == ' ') {
+                        System.out.println("Espaço encontrado na posição: " + i);
+                        break;
+                    }
+                }
+            }
+            
+        }
+        
+
+
 
     
     
